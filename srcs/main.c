@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 12:52:48 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:01:40 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	head = lst->data->begin;
-	while (lst && lst->next != NULL)
-	{
-		printf("%d\n", lst->data->nb);
-		lst = lst->next;
-	}
-	printf("%d\n", lst->data->nb);
 	lst = head;
+	if (check_lst(&lst) == 1)
+	{
+		custom_putstr("Error, duplicate number.\n", 2);
+		return (1);
+	}
 	free_lst(&lst);
-	/* MUST CHECK DUPLICATES */
 	return (0);
 }

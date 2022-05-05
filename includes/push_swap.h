@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 12:39:40 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 13:59:29 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 
 typedef struct s_struct
 {
 	int				nb;
+	int				index;
 	int				size;
 	struct s_lst	*begin;
 }				t_struct;
@@ -49,5 +51,6 @@ int		ft_isdigit(char *str);
 char	*init_lst(t_lst **lst, int ac, char **av);
 t_lst	*new_link(int i, int size, t_lst *head, char **av);
 void	free_lst(t_lst **lst);
+int		check_lst(t_lst **lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 13:03:37 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:00:50 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*init_lst(t_lst **lst, int ac, char **av)
 	(*lst)->data->begin = (*lst);
 	(*lst)->data->size = ac - 1;
 	(*lst)->data->nb = ft_atoi(av[1]);
+	(*lst)->data->index = i - 2;
 	head = (*lst);
 	while (++i != ac)
 	{
@@ -52,7 +53,38 @@ t_lst	*new_link(int i, int size, t_lst *head, char **av)
 		return (NULL);
 	tmp->data->size = size;
 	tmp->data->begin = head;
+	tmp->data->index = i - 1;
 	tmp->data->nb = ft_atoi(av[i]);
 	tmp->next = NULL;
 	return (tmp);
+}
+
+int		find_one(int tofind, t_lst *lst)
+{
+	while (lst && lst->next)
+	{
+		if (tofind == lst->data->nb)
+			return (1);
+		lst = lst->next;
+	}
+	if (lst)
+		if (tofind == lst->data->nb)
+			return (1);
+	return (0);
+}
+
+int		check_lst(t_lst **lst)
+{
+	int tofind;
+	
+	while ((*lst) && (*lst)->next)
+	{
+		tofind = (*lst)->data->nb;
+		if (find_one(tofind, (*lst)->next) == 1)
+			return (1);
+		(*lst) = (*lst)->next;
+	}
+	if (find_one(tofind, (*lst)) == 1)
+		return (1);
+	return (0);
 }

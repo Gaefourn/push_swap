@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:01:23 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 13:01:51 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:02:39 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ int	check_args(int ac, char **av)
 	i = 0;
 	if (ac < 2)
 	{
-		custom_putstr("Error\n", 2);
+		custom_putstr("Error, not enough arguments.\n", 2);
 		return (1);
 	}
 	while (++i != ac)
 	{
 		if (ft_isdigit(av[i]) == 0)
 		{
-			custom_putstr("Error\n", 2);
+			custom_putstr("Error, there is some invalid numbers.\n", 2);
 			return (1);
 		}
 	}
