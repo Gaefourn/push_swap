@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 14:00:50 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:06:13 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_lst	*new_link(int i, int size, t_lst *head, char **av)
 	return (tmp);
 }
 
-int		find_one(int tofind, t_lst *lst)
+int	find_one(int tofind, t_lst *lst)
 {
 	while (lst && lst->next)
 	{
@@ -73,10 +73,10 @@ int		find_one(int tofind, t_lst *lst)
 	return (0);
 }
 
-int		check_lst(t_lst **lst)
+int	check_lst(t_lst **lst)
 {
-	int tofind;
-	
+	int	tofind;
+
 	while ((*lst) && (*lst)->next)
 	{
 		tofind = (*lst)->data->nb;
