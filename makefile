@@ -17,7 +17,8 @@ SRC_PATH =	./srcs
 TMP		 =	main.c \
 			tools.c \
 			printer.c \
-			lst.c
+			lst.c \
+			push_n_swap.c \
 
 SRC_NAME =	$(TMP) $(GNL)
 SRC      =	$(addprefix $(SRC_PATH)/,$(SRC_NAME))

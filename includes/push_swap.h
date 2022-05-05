@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 13:59:29 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:24:45 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define RRA 8
 # define RRB 9
 # define RRR 10
+
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -51,6 +52,7 @@ int		ft_isdigit(char *str);
 char	*init_lst(t_lst **lst, int ac, char **av);
 t_lst	*new_link(int i, int size, t_lst *head, char **av);
 void	free_lst(t_lst **lst);
-int		check_lst(t_lst **lst);
+int		check_lst(t_lst **lst, t_lst *head);
+void	swap(t_lst **toSwap, t_lst **swapWith, int choice);
 
 #endif

@@ -6,11 +6,10 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:01:23 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 14:02:39 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:56:09 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "../includes/push_swap.h"
 
 int	custom_putstr(char *str, int sortie)

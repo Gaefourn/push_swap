@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 14:06:13 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:10:24 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	find_one(int tofind, t_lst *lst)
 	return (0);
 }
 
-int	check_lst(t_lst **lst)
+int	check_lst(t_lst **lst, t_lst *head)
 {
 	int	tofind;
 
@@ -86,5 +86,6 @@ int	check_lst(t_lst **lst)
 	}
 	if (find_one(tofind, (*lst)) == 1)
 		return (1);
+	(*lst) = head;
 	return (0);
 }

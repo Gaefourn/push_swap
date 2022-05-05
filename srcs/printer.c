@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:24:59 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 12:57:39 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:24:17 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void	printer(int nb)
 		custom_putstr("Reverse rotate B.\n", 1);
 	if (nb == 10)
 		custom_putstr("Reverse rotate A and B.\n", 1);
+	else
+		return ;
 }
