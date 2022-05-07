@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 15:10:52 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 19:24:10 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,31 @@ int	check_all(t_lst **lst, int ac, char **av)
 	return (0);
 }
 
-void	print_list(t_lst *lst)
+void	print_list(t_lst *lst, char c)
 {
+	printf("List %c\n{\n", c);
 	while (lst && lst->next)
 	{
-		printf("%d\n", lst->data->nb);
+		printf("__________\n");
+		printf("|NB : %d  |\n", lst->data->nb);
 		lst = lst->next;
 	}
-	printf("%d\n", lst->data->nb);
+	printf("__________\n");
+	printf("|NB : %d  |\n", lst->data->nb);
+	printf("__________\n");
+	printf("}\n");
 }
 
 int	main(int ac, char **av)
 {	
-	t_lst	*stackA;
-	t_lst	*stackB;
+	t_lst	*stack_a;
+	t_lst	*stack_b;
 
-	stackA = NULL;
-	stackB = NULL;
-	if (check_all(&stackA, ac, av) == 1)
+	stack_a = NULL;
+	stack_b = NULL;
+	if (check_all(&stack_a, ac, av) == 1)
 		return (1);
-	print_list(stackA); // remove this
-	free_lst(&stackA);
+	free_lst(&stack_a);
+	free_lst(&stack_b);
 	return (0);
 }
