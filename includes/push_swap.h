@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 19:58:47 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 20:05:17 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@
 typedef struct s_struct
 {
 	int				nb;
-	int				index;
-	int				size;
 	struct s_lst	*begin;
 }				t_struct;
 
@@ -49,7 +47,7 @@ int		check_args(int ac, char **av);
 void	printer(int nb);
 int		ft_isdigit(char *str);
 char	*init_lst(t_lst **lst, int ac, char **av);
-t_lst	*new_link(int i, int size, t_lst *head, char **av);
+t_lst	*new_link(int i, t_lst *head, char **av);
 void	free_lst(t_lst **lst);
 int		check_lst(t_lst **lst, t_lst *head);
 void	swap(t_lst **toSwap, t_lst **swapWith, int choice);

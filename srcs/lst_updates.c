@@ -6,13 +6,13 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:53:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 19:58:11 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 20:05:55 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sad_norm(t_lst **from, t_lst **to, t_lst *tmp)
+void	sad_norm(t_lst **to, t_lst *tmp)
 {
 	while ((*to))
 	{
@@ -45,7 +45,7 @@ void	stack_add_front(t_lst **from, t_lst **to)
 	{
 		update_stack(from);
 		tmp->next = (*to);
-		sad_norm(from, to, tmp);
+		sad_norm(to, tmp);
 	}
 }
 

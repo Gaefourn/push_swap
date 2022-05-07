@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/05 14:10:24 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 20:05:07 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ char	*init_lst(t_lst **lst, int ac, char **av)
 		return (NULL);
 	(*lst)->next = NULL;
 	(*lst)->data->begin = (*lst);
-	(*lst)->data->size = ac - 1;
 	(*lst)->data->nb = ft_atoi(av[1]);
-	(*lst)->data->index = i - 2;
 	head = (*lst);
 	while (++i != ac)
 	{
-		(*lst)->next = new_link(i, ac, head, av);
+		(*lst)->next = new_link(i, head, av);
 		(*lst) = (*lst)->next;
 		if (!(*lst))
 			return (NULL);
@@ -41,7 +39,7 @@ char	*init_lst(t_lst **lst, int ac, char **av)
 	return ("Ok");
 }
 
-t_lst	*new_link(int i, int size, t_lst *head, char **av)
+t_lst	*new_link(int i, t_lst *head, char **av)
 {
 	t_lst	*tmp;
 
@@ -51,9 +49,7 @@ t_lst	*new_link(int i, int size, t_lst *head, char **av)
 	tmp->data = malloc(sizeof(t_struct));
 	if (!(tmp))
 		return (NULL);
-	tmp->data->size = size;
 	tmp->data->begin = head;
-	tmp->data->index = i - 1;
 	tmp->data->nb = ft_atoi(av[i]);
 	tmp->next = NULL;
 	return (tmp);

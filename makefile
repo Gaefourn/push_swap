@@ -20,7 +20,7 @@ TMP		 =	main.c \
 			lst.c \
 			push_n_swap.c \
 			lst_updates.c \
-			reverse_lst.c \
+			rotate_lst.c \
 
 SRC_NAME =	$(TMP) $(GNL)
 SRC      =	$(addprefix $(SRC_PATH)/,$(SRC_NAME))
