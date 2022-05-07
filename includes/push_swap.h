@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 20:05:17 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 21:10:45 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ int		push_a(t_lst **stackA, t_lst **stackB);
 int		push_b(t_lst **stackA, t_lst **stackB);
 void	stack_add_front(t_lst **from, t_lst **to);
 void	update_stack(t_lst **stack);
+void	rotate(t_lst **lst, int choice);
+void	reverse_rotate(t_lst **lst, int choice);
 
 #endif
