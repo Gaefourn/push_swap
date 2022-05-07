@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 17:07:36 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/07 19:58:47 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-
 
 typedef struct s_struct
 {
@@ -54,7 +53,7 @@ t_lst	*new_link(int i, int size, t_lst *head, char **av);
 void	free_lst(t_lst **lst);
 int		check_lst(t_lst **lst, t_lst *head);
 void	swap(t_lst **toSwap, t_lst **swapWith, int choice);
-void	double_swap(t_lst **stackA, t_lst** stackB);
+void	double_swap(t_lst **stackA, t_lst **stackB);
 int		push_a(t_lst **stackA, t_lst **stackB);
 int		push_b(t_lst **stackA, t_lst **stackB);
 void	stack_add_front(t_lst **from, t_lst **to);
