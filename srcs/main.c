@@ -6,14 +6,31 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 21:37:54 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/08 11:24:24 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
+
 int	check_all(t_lst **lst, int ac, char **av)
 {
+	int	i;
+
+	i = 1;
 	if (check_args(ac, av) == 1)
 		return (1);
 	if (init_lst(lst, ac, av) == NULL)
@@ -25,6 +42,16 @@ int	check_all(t_lst **lst, int ac, char **av)
 	{
 		custom_putstr("Error, duplicate number.\n", 2);
 		return (1);
+	}
+	while (av[i])
+	{
+		if (ft_strcmp(av[i], "2147483647") == 0
+			|| ft_strcmp(av[i], "-2147483647") == 0)
+		{
+			custom_putstr("Error, one number is too low or too high.\n", 2);
+			return (1);
+		}
+		i++;
 	}
 	return (0);
 }
