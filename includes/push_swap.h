@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 21:10:45 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/09 09:56:12 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 typedef struct s_struct
 {
 	int				nb;
+	int				pos;
 	struct s_lst	*begin;
 }				t_struct;
 
@@ -50,7 +51,7 @@ char	*init_lst(t_lst **lst, int ac, char **av);
 t_lst	*new_link(int i, t_lst *head, char **av);
 void	free_lst(t_lst **lst);
 int		check_lst(t_lst **lst, t_lst *head);
-void	swap(t_lst **toSwap, t_lst **swapWith, int choice);
+void	swap(t_lst **toSwap, int choice);
 void	double_swap(t_lst **stackA, t_lst **stackB);
 int		push_a(t_lst **stackA, t_lst **stackB);
 int		push_b(t_lst **stackA, t_lst **stackB);
@@ -58,5 +59,10 @@ void	stack_add_front(t_lst **from, t_lst **to);
 void	update_stack(t_lst **stack);
 void	rotate(t_lst **lst, int choice);
 void	reverse_rotate(t_lst **lst, int choice);
+void	assign_pos(t_lst **stack, t_lst *head);
+void	check_pos(t_lst *head, int nb, t_lst **which);
+void	algo(t_lst **stack_a, t_lst **stack_b, int size);
+void	print_list(t_lst *lst, char c);
+void	algo_three(t_lst **stack_a, t_lst **stack_b);
 
 #endif

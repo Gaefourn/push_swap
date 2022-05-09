@@ -4,7 +4,7 @@ NAME     =	push_swap
 CC       =	gcc
 
 #	Flags     #
-CFLAGS   =	-Wall -Wextra -Werror 
+CFLAGS   =	-Wall -Wextra -Werror -g3 
 DEBUG	 = -g3 -fsanitize=address
 
 # 	Headers   #
@@ -21,6 +21,8 @@ TMP		 =	main.c \
 			push_n_swap.c \
 			lst_updates.c \
 			rotate_lst.c \
+			check_nbs.c \
+			algo.c \
 
 SRC_NAME =	$(TMP) $(GNL)
 SRC      =	$(addprefix $(SRC_PATH)/,$(SRC_NAME))

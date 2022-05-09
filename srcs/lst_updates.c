@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:53:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 20:05:55 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/09 09:27:57 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ void	stack_add_front(t_lst **from, t_lst **to)
 	t_lst	*tmp;
 
 	tmp = (*from)->data->begin;
+	if (tmp == NULL)
+		tmp = (*from);
 	if (!(*to))
 	{
 		update_stack(from);
+		tmp->next = NULL;
 		(*to) = tmp;
-		(*to)->next = NULL;
 		return ;
 	}
 	else if ((*to) && !(*to)->next)
