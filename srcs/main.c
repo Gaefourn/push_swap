@@ -6,12 +6,11 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 15:38:48 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:00:41 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 long	ft_atol(const char *nptr)
 {
@@ -91,6 +90,8 @@ void	bad_norm(int ac, t_lst **stack_a, t_lst **stack_b)
 		algo(stack_a, stack_b, ac - 1);
 }
 
+#include <stdio.h>
+
 int	main(int ac, char **av)
 {	
 	t_lst	*stack_a;
@@ -98,7 +99,7 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac == 2)
+	if (ac <= 2)
 		return (0);
 	if (check_all(&stack_a, ac, av) == 1)
 	{
