@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 18:50:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 11:57:57 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:49:36 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	algo_three(t_lst **stack_a, t_lst **stack_b)
 	}
 	if ((*stack_a)->data->pos == 2 && (*stack_a)->next->data->pos == 0)
 		rotate(stack_a, RA);
+	if ((*stack_a)->data->pos == 1 && (*stack_a)->next->data->pos == 0)
+		swap(stack_a, SA);
 }
 
 void	shlag(t_lst **stack_a, t_lst **stack_b)

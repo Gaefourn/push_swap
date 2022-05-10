@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 10:39:27 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:59:00 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_all(t_lst **lst, int ac, char **av)
 	return (0);
 }
 
-void	print_list(t_lst *lst, char c)
+/*void	print_list(t_lst *lst, char c)
 {
 	printf("List %c\n{\n", c);
 	while (lst && lst->next)
@@ -65,7 +65,7 @@ void	print_list(t_lst *lst, char c)
 	}
 	printf("|NB : %d| POS : %d |\n", lst->data->nb, lst->data->pos);
 	printf("}\n");
-}
+}*/
 
 int	main(int ac, char **av)
 {	
@@ -74,16 +74,19 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (ac == 2)
+		return (0);
 	if (check_all(&stack_a, ac, av) == 1)
 		return (1);
 	assign_pos(&stack_a, stack_a->data->begin);
-	if (ac - 1 == 3)
+	if (ac - 1 <= 3)
 		algo_three(&stack_a, &stack_b);
+	if (ac - 1 == 4)
+		algo_four(&stack_a, &stack_b);
 	if (ac - 1 == 5)
 		algo_five(&stack_a, &stack_b);
 	if (ac - 1 > 5)
 		algo(&stack_a, &stack_b, ac - 1);
-	print_list(stack_a, 'A');
 	free_lst(&stack_a);
 	free_lst(&stack_b);
 	return (0);
