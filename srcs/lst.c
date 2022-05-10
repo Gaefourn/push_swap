@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 11:55:16 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:57:30 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,17 @@ int	check_lst(t_lst **lst, t_lst *head)
 	{
 		tofind = (*lst)->data->nb;
 		if (find_one(tofind, (*lst)->next) == 1)
+		{
+			(*lst) = head;
 			return (1);
+		}
 		(*lst) = (*lst)->next;
 	}
 	if (find_one(tofind, (*lst)) == 1)
+	{
+		(*lst) = head;
 		return (1);
+	}
 	(*lst) = head;
 	return (0);
 }

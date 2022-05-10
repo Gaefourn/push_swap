@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 16:18:12 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 10:13:27 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:37:16 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,14 @@ void	double_reverse_rotate(t_lst **stack_a, t_lst **stack_b)
 	reverse_rotate(stack_a, 69);
 	reverse_rotate(stack_b, 69);
 	printer(RR);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		;
+	return (i);
 }

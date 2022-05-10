@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:48:06 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 12:58:51 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:19:51 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void	algo_three(t_lst **stack_a, t_lst **stack_b);
 void	algo_five(t_lst **stack_a, t_lst **stack_b);
 int		is_sorted(t_lst **lst, t_lst *head);
 void	algo_four(t_lst **stack_a, t_lst **stack_b);
+int		ft_strlen(char *str);
 
 #endif

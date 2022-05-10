@@ -6,24 +6,39 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 13:21:30 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:38:48 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+long	ft_atol(const char *nptr)
 {
-	int	i;
+	long	nb;
+	int		i;
+	int		neg;
 
 	i = 0;
-	while (s1[i] && s2[i])
+	nb = 0;
+	neg = 0;
+	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\r'
+		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (nptr[i] == '-')
+			neg = 1;
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		nb = ((nb * 10) + (nptr[i] - 48));
+		i++;
+	}
+	if (neg > 0)
+		return (-nb);
+	return (nb);
 }
 
 int	check_all(t_lst **lst, int ac, char **av)
@@ -31,25 +46,22 @@ int	check_all(t_lst **lst, int ac, char **av)
 	int	i;
 
 	i = 0;
-	if (check_args(ac, av) == 1)
-		return (1);
-	if (init_lst(lst, ac, av) == NULL)
-	{
-		custom_putstr("Error\n", 2);
-		return (1);
-	}
-	if (check_lst(lst, (*lst)->data->begin) == 1)
+	if (check_args(ac, av) == 1 || init_lst(lst, ac, av) == NULL
+		|| check_lst(lst, (*lst)->data->begin) == 1)
 	{
 		custom_putstr("Error\n", 2);
 		return (1);
 	}
 	while (av[++i])
 	{
-		if (ft_strcmp(av[i], "2147483647") == 0
-			|| ft_strcmp(av[i], "-2147483647") == 0)
+		if (ft_strlen(av[i]) >= 10)
 		{
-			custom_putstr("Error\n", 2);
-			return (1);
+			if ((ft_atol(av[i]) > 2147483647 || ft_atol(av[i]) < -2147483648)
+				|| ft_atol(av[i]) == -1)
+			{
+				custom_putstr("Error\n", 2);
+				return (1);
+			}
 		}
 	}
 	return (0);
@@ -89,7 +101,11 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		return (0);
 	if (check_all(&stack_a, ac, av) == 1)
+	{
+		free_lst(&stack_a);
+		free_lst(&stack_b);
 		return (1);
+	}
 	assign_pos(&stack_a, stack_a->data->begin);
 	if (is_sorted(&stack_a, stack_a->data->begin) == 0)
 	{
