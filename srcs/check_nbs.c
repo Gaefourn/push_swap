@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 18:10:21 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 12:38:06 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:18:24 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	algo_four(t_lst **stack_a, t_lst **stack_b)
 		}
 		else
 		{
-			rotate(stack_a, RA);	
+			rotate(stack_a, RA);
 			head = (*stack_a)->data->begin;
 		}
 	}
