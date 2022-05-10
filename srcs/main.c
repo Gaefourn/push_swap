@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/09 09:53:22 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 10:39:27 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int	check_all(t_lst **lst, int ac, char **av)
 		return (1);
 	if (init_lst(lst, ac, av) == NULL)
 	{
-		custom_putstr("Malloc error\n", 2);
+		custom_putstr("Error\n", 2);
 		return (1);
 	}
 	if (check_lst(lst, (*lst)->data->begin) == 1)
 	{
-		custom_putstr("Error, duplicate number.\n", 2);
+		custom_putstr("Error\n", 2);
 		return (1);
 	}
 	while (av[++i])
@@ -48,7 +48,7 @@ int	check_all(t_lst **lst, int ac, char **av)
 		if (ft_strcmp(av[i], "2147483647") == 0
 			|| ft_strcmp(av[i], "-2147483647") == 0)
 		{
-			custom_putstr("Error, one number is too low or too high.\n", 2);
+			custom_putstr("Error\n", 2);
 			return (1);
 		}
 	}
@@ -80,7 +80,7 @@ int	main(int ac, char **av)
 	if (ac - 1 == 3)
 		algo_three(&stack_a, &stack_b);
 	if (ac - 1 == 5)
-		return (0);
+		algo_five(&stack_a, &stack_b);
 	if (ac - 1 > 5)
 		algo(&stack_a, &stack_b, ac - 1);
 	print_list(stack_a, 'A');

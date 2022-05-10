@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:53:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/09 09:27:57 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:20:12 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	update_stack(t_lst **stack)
 {
 	t_lst	*head;
 
+	if ((*stack) && !(*stack)->next)
+	{
+		(*stack) = NULL;
+		return ;
+	}
 	head = (*stack)->next;
 	while ((*stack) && (*stack)->next)
 	{

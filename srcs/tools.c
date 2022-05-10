@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:01:23 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/08 10:58:27 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:31:20 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	check_args(int ac, char **av)
 	{
 		if (ft_isdigit(av[i]) == 0)
 		{
-			custom_putstr("Error, there is some invalid numbers.\n", 2);
+			custom_putstr("Error\n", 2);
 			return (1);
 		}
 	}

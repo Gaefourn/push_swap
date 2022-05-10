@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:10:31 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/07 20:05:07 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/10 11:55:16 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,20 @@ int	check_lst(t_lst **lst, t_lst *head)
 	if (find_one(tofind, (*lst)) == 1)
 		return (1);
 	(*lst) = head;
+	return (0);
+}
+
+int	is_sorted(t_lst **lst, t_lst *head)
+{
+	while (*lst)
+	{
+		if ((*lst)->next && *lst && (*lst)->data->pos > (*lst)->next->data->pos)
+		{
+			*lst = head;
+			return (1);
+		}
+		*lst = (*lst)->next;
+	}
+	*lst = head;
 	return (0);
 }
