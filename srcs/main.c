@@ -6,7 +6,7 @@
 /*   By: gaefourn <gaefourn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:36:43 by gaefourn          #+#    #+#             */
-/*   Updated: 2022/05/10 16:00:41 by gaefourn         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:33:49 by gaefourn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void	bad_norm(int ac, t_lst **stack_a, t_lst **stack_b)
 	if (ac - 1 > 5)
 		algo(stack_a, stack_b, ac - 1);
 }
-
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {	
